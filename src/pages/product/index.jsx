@@ -1,36 +1,31 @@
 import React, { Component } from "react";
-import Api from '../../services/api'
-import {Link}  from 'react-router-dom'
+import Api from "../../services/api";
 
-export default class Main extends Component{
+export default class Product extends Component {
     state = {
-        products : []
-    }
-
-    componentDidMount(){
-        this.listProducts();
-    }
-
-    listProducts = async () => {
-        const response = await Api.get(`/products`);
+        product: [],
+      };
+    
+      async componentDidMount() {
+        const { id } = this.props.match.params;
+        const response = await Api.get(`/products/${id}`);
         this.setState({
-            products: response.data.docs
-        })
-    }
-
-    render () {
-        const {products} = this.state;
+          product: response.data,
+        });
+      }
+    
+      render() {
+        const { product } = this.state;
         return (
-            <div className="product-list">
-                {
-                    products.map(product => (
-                        <div key={product._id}>
-                            <h1>{product.title}</h1>
-                            <Link to={`/products/${product._id}`}> Acessar</Link>
-                        </div>
-                    ))
-                }
+          <h1>
+            <div className="product-info">
+                <h1>{product.title}</h1>
+                <p>{product.description}</p>
+                <p>
+                    URL: <a href={product.url} target="_.blanket">{product.url}</a>
+                </p>
             </div>
-        )
-    }
+          </h1>
+        );
+      }
 }
