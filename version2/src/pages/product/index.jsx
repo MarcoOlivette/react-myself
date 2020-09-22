@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Api from "../../service/api";
 
-const Product = () => (
-    <h1> Product </h1>
-)
+export default function Product() {
+  const [products, setProducts]  = useState([]);
 
-export default Product;
+  useEffect(() => {
+    loadProducts();
+    console.log('render');
+  }, []);
+
+  const loadProducts = async () => {
+    const response = await Api.get("/products");
+    setProducts(response.data.docs);
+  };
+
+  return (
+      <div>
+          {products.map(product =>(
+              <div key={product._id}>
+                  <h1>{product.title}</h1>
+              </div>
+          ))}
+      </div>
+  );
+}
