@@ -1,3 +1,13 @@
 .product-info{
-    color: red;
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #8459d9;
+    border-radius: 34px;
+    color: white;
+}
+
+.product-info a{
+    color: #59d9d9;
+    text-decoration: none;
 }

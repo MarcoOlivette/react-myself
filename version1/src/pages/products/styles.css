@@ -1,0 +1,19 @@
+.product-list{
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+.product{
+    margin: 20px 20px;
+    background-color: #8459d9;
+    color: white;
+    padding: 40px 0;
+    display: inline-block;
+    width: 40%;
+    border-radius: 34px;
+}
+
+.product .link{
+    color: #59d9d9;
+    text-decoration: none;
+}

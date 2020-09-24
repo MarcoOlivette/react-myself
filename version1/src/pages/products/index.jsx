@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../services/api";
 import { Link } from "react-router-dom";
+import './styles.css'
 
 export default function Main() {
   const [products, setProduct] = useState([]);
@@ -17,9 +18,9 @@ export default function Main() {
   return (
       <div className="product-list">
         {products.map((product) => (
-          <div key={product._id}>
+          <div key={product._id} className="product">
             <h1>{product.title}</h1>
-            <Link to={`/products/${product._id}`}> Acessar</Link>
+            <Link to={`/products/${product._id}`} className="link"> Acessar</Link>
           </div>
         ))}
       </div>
