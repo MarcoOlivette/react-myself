@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Main from "./pages/main";
+import Contact from "./pages/contact";
 import Products from "./pages/products";
 import Product from "./pages/product/";
 import Header from "./components/header";
@@ -10,6 +11,7 @@ const Routes = () => (
     <Header></Header>
     <Switch>
       <Route exact path="/" component={Main}></Route>
+      <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/products" component={Products}></Route>
       <Route exact path="/products/:id" component={Product}></Route>
     </Switch>
