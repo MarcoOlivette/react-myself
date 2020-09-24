@@ -1,0 +1,19 @@
+header {
+    background-color: #5959d9;
+    color: white;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+nav ul {
+    display: inline-block;
+    padding: 30px;
+}
+
+nav ul .link {
+    font-size: 24px;
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+}

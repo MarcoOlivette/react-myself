@@ -4,12 +4,11 @@ import "./styles.css";
 
 const Header = () => (
   <header>
-    <h1>Links</h1>
     <nav>
       <ul>
-        <Link to={"/"}>Principal</Link>
-        <Link to={"/contact"}>Contatos</Link>
-        <Link to={"/products"}>Lista de produtos</Link>
+        <Link to={"/"} className="link">Principal</Link>
+        <Link to={"/contact"} className="link">Contatos</Link>
+        <Link to={"/products"} className="link">Lista de produtos</Link>
       </ul>
     </nav>
   </header>
